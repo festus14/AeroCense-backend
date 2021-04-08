@@ -23,6 +23,7 @@
   "homepage": "https://github.com/neverendingqs/netlify-express#readme",
   "dependencies": {
     "mongodb": "^3.6.6",
+    "mongodb-client-encryption": "^1.2.3",
     "mongoose": "^5.12.3"
   },
   "devDependencies": {
