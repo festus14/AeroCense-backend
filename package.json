@@ -1,26 +1,18 @@
 {
-  "name": "netlify-express",
+  "name": "aerocense",
   "version": "0.0.1",
-  "description": "Example of how to deploy a Express.js Netlify app.",
+  "description": "IoT project for air quality measurement",
   "main": "functions/server.js",
   "scripts": {
     "build": "netlify-lambda build express",
     "start": "nodemon server-local.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/neverendingqs/netlify-express.git"
-  },
   "keywords": [
-    "netlify",
-    "express.js"
+    "IoT",
+    "Air Quality"
   ],
-  "author": "neverendingqs",
+  "author": "Festus Omole",
   "license": "Apache-2.0",
-  "bugs": {
-    "url": "https://github.com/neverendingqs/netlify-express/issues"
-  },
-  "homepage": "https://github.com/neverendingqs/netlify-express#readme",
   "dependencies": {
     "mongodb": "^3.6.6",
     "mongodb-client-encryption": "^1.2.3",
