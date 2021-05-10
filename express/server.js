@@ -19,13 +19,6 @@ router.post("/", (req, res) => res.json({ postBody: req.body }));
 router.get("/air-quality-readings", (req, res, next) => {
   const { MongoClient } = require("mongodb");
 
-  async function listDatabases(client) {
-    const databasesList = await client.db().admin().listDatabases();
-
-    console.log("Databases:");
-    databasesList.databases.forEach((db) => console.log(` - ${db.name}`));
-  }
-
   async function main() {
     const uri =
       "mongodb+srv://festus:festuspassword@aerocense.myuwr.mongodb.net/air_quality_readings?retryWrites=true&w=majority";
@@ -33,16 +26,13 @@ router.get("/air-quality-readings", (req, res, next) => {
     const client = new MongoClient(uri);
     try {
       await client.connect();
-      // await listDatabases(client);
       const db = await client.db("air_quality_readings");
       const latestAirQuality = await db
         .collection("air_quality_readings")
         .find({})
-        .sort({ datefield: -1 })
         .toArray();
 
       const latest = await latestAirQuality.reverse()[0];
-      await console.log(latest);
 
       return res.json({ latest });
     } catch (e) {
