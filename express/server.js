@@ -32,7 +32,7 @@ router.get("/air-quality-readings", (req, res, next) => {
         .find({})
         .toArray();
 
-      const latest = await latestAirQuality.reverse()[0];
+      const latest = await latestAirQuality[0];
 
       return res.json({ latest });
     } catch (e) {
